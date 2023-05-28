@@ -8,7 +8,7 @@ import {Typography, Box} from "@mui/material";
 function Copyright(){
     return (
         <Typography variant="body2" color="textSecondary" align="center">
-            {"Copyright"}
+            {"Copyright © "}
             fsoftwareengineer, {new Date().getFullYear()}
             {"."}
         </Typography>
@@ -21,7 +21,7 @@ function AppRouter(){
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<App />}/>
-                    <Route path="login" element={<App />}/>
+                    <Route path="login" element={<Login />}/>
                 </Routes>
             </BrowserRouter>
             <Box mt={5}>
