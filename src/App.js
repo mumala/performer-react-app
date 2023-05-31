@@ -4,7 +4,7 @@ import Todo from './Todo';
 import React, {useEffect, useState} from 'react';
 import {AppBar, Button, Container, Grid, List, Paper, Toolbar, Typography} from "@mui/material"
 import AddTodo from './AddTodo';
-import {call, signout} from "./service/ApiService";
+import {call, signout, board} from "./service/ApiService";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -53,6 +53,11 @@ function App() {
             <Typography variant='h6'>오늘의 할일</Typography>
           </Grid>
           <Grid item>
+            <Button color='inherit'>커뮤니티1</Button>
+            <Button color='inherit'>커뮤니티2</Button>
+          </Grid>
+          <Grid item>
+            <Button color='inherit' raised onClick={board}>개인설정</Button>
             <Button color='inherit' raised onClick={signout}>로그아웃</Button>
           </Grid>
         </Grid>

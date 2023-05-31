@@ -52,3 +52,8 @@ export function signout() {
 export function signup(userDTO) {
     return call("/auth/signup", "POST", userDTO);
 }
+
+export function board() {
+    localStorage.setItem("ACCESS_TOKEN", null);
+    window.location.href="/board";
+}
