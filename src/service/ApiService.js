@@ -57,3 +57,8 @@ export function board() {
     localStorage.setItem("ACCESS_TOKEN", null);
     window.location.href="/board";
 }
+
+export function main() {
+    localStorage.setItem("ACCESS_TOKEN", null);
+    window.location.href="/";
+}

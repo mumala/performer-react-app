@@ -4,7 +4,7 @@ import Todo from './Todo';
 import React, {useEffect, useState} from 'react';
 import {AppBar, Button, Container, Grid, List, Paper, Toolbar, Typography} from "@mui/material"
 import AddTodo from './AddTodo';
-import {call, signout, board} from "./service/ApiService";
+import {call, signout, board, main} from "./service/ApiService";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -50,14 +50,14 @@ function App() {
       <Toolbar>
         <Grid justifyContent="space-between" container>
           <Grid item>
-            <Typography variant='h6'>오늘의 할일</Typography>
+            <Typography variant='h6'>Performer</Typography>
           </Grid>
           <Grid item>
-            <Button color='inherit'>커뮤니티1</Button>
-            <Button color='inherit'>커뮤니티2</Button>
+            <Button color='inherit' raised onClick={main}>TODO</Button>
+            <Button color='inherit' raised onClick={board}>BOARD</Button>
           </Grid>
           <Grid item>
-            <Button color='inherit' raised onClick={board}>개인설정</Button>
+            <Button color='inherit'>개인설정</Button>
             <Button color='inherit' raised onClick={signout}>로그아웃</Button>
           </Grid>
         </Grid>
