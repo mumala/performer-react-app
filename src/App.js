@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Todo from './Todo';
+import Todo from './todo/Todo';
 import React, {useEffect, useState} from 'react';
 import {AppBar, Button, Container, Grid, List, Paper, Toolbar, Typography} from "@mui/material"
-import AddTodo from './AddTodo';
+import AddTodo from './todo/AddTodo';
 import {call, signout, board, main} from "./service/ApiService";
 
 function App() {

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {AppBar, Button, TextField, Grid, Paper, Toolbar, Typography} from "@mui/material"
 import { styled } from '@mui/system';
-import {signout, board, main} from "./service/ApiService";
+import {call, signout, board, main} from "../service/ApiService";
 
 const BoardWrapper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -32,6 +32,11 @@ const Board = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
+  const addItem = (item) => {
+    call("/board","POST",item)
+      .then((response) => setPosts(response.data));
+  };
+
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
@@ -46,6 +51,8 @@ const Board = () => {
       title: title,
       content: content,
     };
+    
+    addItem(newPost)
     setPosts([...posts, newPost]);
 
     setTitle('');
@@ -104,6 +111,8 @@ const Board = () => {
           </Button>
         </ButtonWrapper>
       </Form>
+      </BoardWrapper>
+      <BoardWrapper>
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post.id}>

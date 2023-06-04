@@ -3,7 +3,7 @@ import "./index.css";
 import App from "./App";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Board from "./Board";
+import Board from "./board/Board";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import {Typography, Box} from "@mui/material";
 
